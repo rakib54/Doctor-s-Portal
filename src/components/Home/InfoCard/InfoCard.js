@@ -4,7 +4,7 @@ import './InfoCard.css'
 
 const InfoCard = ({ info }) => {
     return (
-        <div className="col-md-4 text-white info-Card">
+        <div className="col-md-4 col-sm-12 col-12 text-white info-Card">
             <div className={`d-flex justify-content-center info-container info-${info.background}`}>
                 <div className='ms-3'>
                     <FontAwesomeIcon className="InfoIcon" icon={info.icon}></FontAwesomeIcon>

@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import Doctor from '../Doctor/Doctor';
+import Doctor from '../Doctor/Doctor'
+
 
 const Doctors = () => {
-    // const [doctors, setDoctors] = useState({})
+    const [doctorDetails, setDoctors] = useState([])
 
-    // useEffect(()=>{
-    //     fetch('http://localhost:5000/doctors')
-    //     .then(res => res.json())
-    //     .then(data =>{
-    //         setDoctors(data)
-    //     })
-    // },[])
+    useEffect(()=>{
+        fetch('http://localhost:5000/doctors')
+        .then(res => res.json())
+        .then(data =>{
+            setDoctors(data)
+        })
+    },[])
     return (
         <section className="doctors">
             <div className="container">
                 <h5 className="text-center text-primary mb-5">Our Doctors</h5>
                 <div className="row">
+                    {/* <Doctor />
                     <Doctor />
-                    <Doctor />
-                    <Doctor />
-                    {/* {
-                        doctors.map(doctor =><Doctor doctor={doctor} key={doctor._id}></Doctor>)
-                    } */}
+                    <Doctor /> */}
+                    {
+                        doctorDetails.map(doc =><Doctor key={doc._id} doc={doc}></Doctor>)
+                    }
                 </div>
             </div>
         </section>
